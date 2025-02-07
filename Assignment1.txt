@@ -1,0 +1,102 @@
+Name-Param
+Roll no-100
+batch-2
+course-Computer science
+Subject-OTP
+  
+DOCS COMMAND ASSIGNMENT:
+=======================================================================================================
+ (Q-1)Display the current version of DOS on system and display volume of System. 
+ Ans)ver,vol.
+=======================================================================================================
+ (Q-2) Display current Date & current Time.
+ Ans)echo %date%,echo %time%.
+=======================================================================================================
+(Q-3) Display only directories in wide format in ascending order of their name.
+ Ans)dir /ad /w.
+=======================================================================================================
+(Q-4) Display all read only files in descending order of their extension name and size in lower
+case.
+Ans)dir /a:r /o:-e /-c
+========================================================================================================
+(Q-5) Display all the files and directories in drive Z in sorted form, page wise on screen
+without using DIR command switch.
+Ans)cd Z:\
+for /f "delims=" %i in ('dir /b') do @echo %i
+========================================================================================================
+(Q-6) Change the DOS system prompt to your name with dollar sign.
+Ans)prompt Param$
+========================================================================================================
+(Q-7)Display all files having six or less characters as the length and having any extension in
+Drive D.
+Ans) dir D:\??????.* /b
+========================================================================================================
+(Q-8)Create Directory OTP in and create directory of your roll no in OTP directory.
+Ans) mkdir D:\OTP
+mkdir D:\OTP\100
+========================================================================================================
+(Q-9) Make two directory CS1 and CS2 in newly created directory of your name.
+Ans)mkdir D:\OTP\Param\CS1
+mkdir D:\OTP\Param\CS2
+========================================================================================================
+(Q-10)Create two files of test1.txt and test2.txt in the OTP Directory respectively with
+following contents.
+(a) test1.txt
+  ->THIS IS THE FIRST TEXT FILE.
+  -> THIS IS DOS.
+  -> MY NAME IS <Param>.
+  -> SUBJECT IS SL.
+Ans)echo THIS IS FIRST TEST FILE. > D:\OTP\test1.txt
+echo THIS IS SECOND TEST FILE. >> D:\OTP\test1.txt
+echo THIS IS DOS. >> D:\OTP\test1.txt
+echo MY NAME IS <Your Name>. I AM STUDYING IN PGDCSA >> D:\OTP\test1.txt
+echo SUBJECT IS SL. FIRST SEMESTER. >> D:\OTP\test1.txt
+
+(b)  test2.txt
+   -> THIS IS SECOND TEXT FILE
+   -> THIS IS DOS
+   -> I AM STYDYING IN PGDCSA
+   -> FIRST SEMESTER
+   -> SUBJECT IS SL.	
+Ans)echo THIS IS SECOND TEST FILE. > D:\OTP\test2.txt
+echo THIS IS DOS. >> D:\OTP\test2.txt
+echo SUBJECT IS SL. >> D:\OTP\test2.txt
+===============================================================================================
+(Q-11)) Display directory in current drive redirect output to output.txt.
+Ans)dir > output.txt
+===============================================================================================
+(Q-12) Find “DOS” text into merge.txt, find the following outputs.
+a) Display those lines having mismatch
+Ans)(a)findstr /v "DOS" merge.txt
+b) Display total nos. of line those match.
+Ans)(b)find /c "DOS" merge.txt
+================================================================================================
+(Q-13) Find string “THIS IS” in both the files test1.txt & test3.txt.
+Ans) find "THIS IS" D:\OTP\test1.txt
+find "THIS IS" D:\OTP\test3.txt
+================================================================================================
+(Q-14)Find the total number of lines containing the word (your name) the in the files test1.txt.
+Ans)find /c "Your Name" D:\OTP\test1.txt
+================================================================================================
+(Q-15) Display all files beginning with letter A followed by any four characters and having
+extension beginning with c in drive E and all it’s nested subdirectory in the
+chronological order page wise.
+Ans)dir E:\A????.c*
+================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

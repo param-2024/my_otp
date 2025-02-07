@@ -1,0 +1,150 @@
+Name-Param
+Roll no-100
+Subject-OTP
+Cource-Computer Science
+Batch 2
+
+Assingment of Batch file
+=============================================================================================
+Q-1) Create Batch file batch1.bat
+(i) To clear Screen
+(ii) Create directory named CS.
+(iii)Create two subdirectories in CS named 2023 & 2024.
+(iv)Change the color of console output as White background and Purple text.
+(v) Change the prompt with your friend name.
+
+(ans):@echo off
+cls
+mkdir CS
+mkdir CS\2023
+mkdir CS\2024
+color 5F
+prompt YourFriendName$G
+============================================================================================
+Q-2) Create Batch file batch2.bat
+(i) Change the Title command window of your current drive.
+(ii) Display the System information and save in sysinfo.txt.
+(iii)Wait for users to press any key.
+(iv)Disappear the prompt.
+(v) Display tree structure of any drive.
+
+(ans):@echo off
+title Current Drive
+systeminfo > sysinfo.txt
+pause
+@echo off
+tree C:\
+=======================================================================================
+Q-3 Create Batch file batch3.bat
+(i) Create text file named Myself.txt having your details (Rollno, Name, Address) in
+2023 directory.
+(ii) Display the content of Myself.txt.
+(iii)Reset the color of console output.
+(iv)Copy the contents of Myself.txt, change the content and name the file as detail.txt.
+(v) Create Myself.txt in 2023 with the contents of both text file of above.
+
+(ans):@echo off
+echo Rollno:12345 > CS\2023\Myself.txt
+echo Name: YourName >> CS\2023\Myself.txt
+echo Address: YourAddress >> CS\2023\Myself.txt
+type CS\2023\Myself.txt
+color 07
+copy CS\2023\Myself.txt CS\2023\detail.txt
+echo Rollno: 54321 > CS\2023\Myself.txt
+type CS\2023\Myself.txt >> CS\2023\Myself.txt
+====================================================================================
+Q-4Create Batch file batch4.bat
+(i) Copy Help command contents to Help.txt in 2024 subdirectory.
+(ii) Copy all text file from 2023 to 2024 text subdirectory.
+(iii)Change to 2023 subdirectory and display content of Help.txt file screen wise.
+(iv)Move files Mydetail.txt to 2024.
+(v) Rename file help.txt to cs.txt.
+
+(ans):@echo off
+help > CS\2024\Help.txt
+copy CS\2023\*.txt CS\2024\
+cd CS\2023
+more Help.txt
+move Mydetail.txt CS\2024\
+rename CS\2024\Help.txt cs.txt
+=====================================================================================
+Q-5Create Batch file batch5.bat
+(i) Display name of files and subdirectories current directory in reverse order.
+(ii) Copy all contents (Files & Subdirectories) from 2013 to 2012.
+(iii)Display IP information and redirect output in ip.txt
+(iv)Sort the contents of Mydetail.txt and that output is copy in cs2.txt.
+(v) Display list of directories, subdirectories of any drive in descending order name wise
+without any heading information. 
+
+(ans):@echo off
+dir /b /on | sort /r
+xcopy /E /I CS\2013\* CS\2012\
+ipconfig > ip.txt
+sort CS\2023\Mydetail.txt > cs2.txt
+dir /s /b C:\ | sort /r
+=======================================================================================
+Q-6Create Batch file batch6.bat
+(i) Create two text file named file1.txt and file2.txt stores page heading along with your
+Rollno.
+(ii) Compare these two files and store output having line numbers with differences.
+(iii)Wait for user to press any key.
+(iv)Find “Rollno.” text into the file1.txt file with following information.
+(v) Display Total number of Lines and lines those mismatched in file1.txt.
+
+(ans):@echo off
+echo Page Heading: YourHeading, Rollno: 12345 > CS\file1.txt
+echo Page Heading: AnotherHeading, Rollno: 12345 > CS\file2.txt
+fc /l CS\file1.txt CS\file2.txt > differences.txt
+pause
+find "Rollno." CS\file1.txt
+find /c /v "" CS\file1.txt
+=======================================================================================
+Q-7 Create Batch file batch8.bat
+(i) Create two files b1.bat, b2.bat in CS directory.
+(ii) Combine content of b1.bat and b2.bat in final.txt.
+(iii)Find string “echo” in final.txt irrespective of their cases.
+(iv)Find total nos. of lines in b1.bat and b2.bat.
+(v) Print 11 to 20 on screen.
+
+(ans):@echo off
+echo @echo Hello > CS\b1.bat
+echo @echo World >> CS\b1.bat
+echo @echo Test >> CS\b2.bat
+echo @echo Batch File >> CS\b2.bat
+type CS\b1.bat CS\b2.bat > CS\final.txt
+findstr /i "echo" CS\final.txt
+find /c /v "" CS\b1.bat
+find /c /v "" CS\b2.bat
+for /L %%i in (11,1,20) do echo %%i
+========================================================================================
+Q-8 Create Batch file batch9.bat
+(i) Display message „I m working in DOS operating system‟.
+(ii) Call batch8.bat file.
+(iii) Change directory to back.
+(iv) Display message „Me back in current Directory‟.
+(v) Print first 100 to 80 numbers with the step size of 2 on screen in reverse order
+
+(ans):@echo off
+echo I m working in DOS operating system
+call batch8.bat
+cd ..
+echo Me back in current Directory
+for /L %%i in (100,-2,80) do echo %%i
+======================================================================================
+Q-9Create batch file batch10.bat
+(i) Check the existence of file A.txt
+(ii) If existed then copy the same file into its subdirectory and display message „Finished
+Copy!!!‟.
+(iii)If not existed then display error message „File does not exist‟.
+(iv)Change the current prompt to Software Lab with equal sign (“=”).
+(v) Sort all text files in ascending order on its name and display it in wide format.
+
+(ans):@echo off
+if exist A.txt (
+    copy A.txt A\subdirectory\
+    echo Finished Copy!!!
+) else (
+    echo File does not exist
+)
+prompt = Software Lab
+dir /b /on *.txt | sort
